@@ -6,8 +6,12 @@
 //
 
 #import "ViewController.h"
+#import "OYCameraViewController.h"
+#import "SSPublicHeader.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
 @end
 
@@ -17,6 +21,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    OYCameraViewController *cameraVC = segue.destinationViewController;
+    cameraVC.uploadSuccess = ^(UIImage *img) {
+        self.imgView.image = img;
+    };
+    
+}
+
 
 
 @end

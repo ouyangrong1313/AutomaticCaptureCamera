@@ -1,0 +1,21 @@
+//
+//  SSPrefixHeader.pch
+//  小蚁学堂
+//  Created by 刘辉 on 2018/2/5.
+//  Copyright © 2018年 Liew. All rights reserved.
+
+
+#ifndef SSPrefixHeader_pch
+#define SSPrefixHeader_pch
+
+// /Users/ouyangrong/Desktop/AutomaticCaptureCamera/AutomaticCaptureCamera
+
+#import "SSColorHeader.h"
+#import "SSPublicHeader.h"
+#import "Masonry.h"
+#import "XYColorOC.h"
+#import "SSGateoryHeader.h"
+#import "SSUtility.h"
+//#import "YYKit.h"
+
+#endif /* SSPrefixHeader_pch */
