@@ -39,7 +39,7 @@ static NSString *manualPhotoTipString = @"捕获中....请保持稳定";
 @end
 
 @interface OYCameraViewController ()<UIScrollViewDelegate,UIImagePickerControllerDelegate,AVCaptureVideoDataOutputSampleBufferDelegate,AVCapturePhotoCaptureDelegate>{
-    int count ;
+    
     UIView *_photoButotn;
     UIButton *_takePhotoButton;
     UIView   *_downView;
@@ -49,13 +49,12 @@ static NSString *manualPhotoTipString = @"捕获中....请保持稳定";
     NSInteger selectedSecondTag;
     UIImageView *_focusView;
     UITapGestureRecognizer *_tapGesture;
-    AVCaptureDevice *_captureManager;
     UIButton *_backBtn;
     UIButton *_flashBtn;
     int _photoCount;
     dispatch_queue_t _captureQueue;
     CIContext *_coreImageContext;
-    GLuint _renderBuffer;
+    //GLuint _renderBuffer;
     GLKView *_glkView; // 'GLKView' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
     BOOL _isStopped;
     
@@ -1176,6 +1175,7 @@ static NSString *manualPhotoTipString = @"捕获中....请保持稳定";
 }
 
 - (CIRectangleFeature *)_biggestRectangleInRectangles:(NSArray *)rectangles {
+    
     if (![rectangles count]) return nil;
     
     float halfPerimiterValue = 0;
@@ -1205,6 +1205,7 @@ static NSString *manualPhotoTipString = @"捕获中....请保持稳定";
 }
 
 - (CIRectangleFeature *)biggestRectangleInRectangles:(NSArray *)rectangles {
+    
     CIRectangleFeature *rectangleFeature = [self _biggestRectangleInRectangles:rectangles];
     
     if (!rectangleFeature) return nil;
